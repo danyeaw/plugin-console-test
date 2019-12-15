@@ -1,4 +1,5 @@
 import gi
+import pytest
 
 gi.require_version("Gdk", "3.0")
 gi.require_version("Gtk", "3.0")
@@ -13,6 +14,7 @@ class KeyEvent:
         self.state = state
 
 
+@pytest.mark.skip
 def test_console_opening():
     main(main_loop=False)
     Gtk.main_iteration()
