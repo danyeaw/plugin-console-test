@@ -14,12 +14,12 @@ class KeyEvent:
         self.state = state
 
 
-@pytest.mark.skip
 def test_console_opening():
     main(main_loop=False)
     Gtk.main_iteration()
 
 
+@pytest.mark.skip
 def test_help():
     help = Help()
 
