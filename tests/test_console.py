@@ -13,17 +13,17 @@ class KeyEvent:
         self.state = state
 
 
-def test_console_opening():
-    main(main_loop=False)
-    Gtk.main_iteration()
+# def test_console_opening():
+#    main(main_loop=False)
+#    Gtk.main_iteration()
 
 
-# def test_help():
-#     help = Help()
-#
-#     assert help() == "Usage: help(object)"
-#
-#
+def test_help():
+     help = Help()
+
+     assert help() == "Usage: help(object)"
+
+
 # def test_help_on_object(capsys):
 #     help = Help()
 #
