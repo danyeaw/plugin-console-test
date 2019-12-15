@@ -14,6 +14,7 @@ class KeyEvent:
         self.state = state
 
 
+@pytest.mark.skip
 def test_console_opening():
     main(main_loop=False)
     Gtk.main_iteration()
@@ -26,6 +27,7 @@ def test_help():
     assert help() == "Usage: help(object)"
 
 
+@pytest.mark.skip
 def test_help_on_object(capsys):
     help = Help()
 
@@ -35,11 +37,13 @@ def test_help_on_object(capsys):
     assert "|" in captured.out
 
 
+@pytest.mark.skip
 def console_text(console):
     buffer = console.text.get_buffer()
     return buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
 
 
+@pytest.mark.skip
 def test_history():
     console = GTKInterpreterConsole(locals={})
     console.history.append("my_history()")
@@ -50,6 +54,7 @@ def test_history():
     assert ">>> my_history()" in text
 
 
+@pytest.mark.skip
 def test_deep_history():
     console = GTKInterpreterConsole(locals={})
     console.history.append("deepest()")
@@ -65,6 +70,7 @@ def test_deep_history():
     assert ">>> deeper()" in text
 
 
+@pytest.mark.skip
 def test_run_line():
     console = GTKInterpreterConsole(locals={})
 
