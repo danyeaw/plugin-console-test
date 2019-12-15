@@ -2,6 +2,6 @@ from plugin.console import Help
 
 
 def test_help():
-    help2 = Help()
+    help = Help()
 
-    assert help2() == "Usage: help(object)"
+    assert help() == "Usage: help(object)"
