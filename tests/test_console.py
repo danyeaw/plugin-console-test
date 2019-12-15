@@ -13,9 +13,9 @@ class KeyEvent:
         self.state = state
 
 
-def test_console_opening():
-    main(main_loop=False)
-    Gtk.main_iteration()
+# def test_console_opening():
+#    main(main_loop=False)
+#    Gtk.main_iteration()
 
 
 # def test_help():
