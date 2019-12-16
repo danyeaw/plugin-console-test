@@ -2,7 +2,6 @@ import code
 import pydoc
 import sys
 from rlcompleter import Completer
-from typing import Dict, List
 
 from gi.repository import Gdk, GLib, Gtk, Pango
 
