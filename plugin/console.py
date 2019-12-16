@@ -1,7 +1,7 @@
 import pydoc
 from rlcompleter import Completer
 
-from gi.repository import Gdk, GLib, Gtk, Pango
+from gi.repository import Gdk, Gtk
 
 if __name__ == "__main__":
     import gi
