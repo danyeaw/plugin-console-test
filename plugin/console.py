@@ -1,12 +1,9 @@
+import gi
 import pydoc
 from rlcompleter import Completer
 
+gi.require_version("Gtk", "3.0")
 from gi.repository import Gdk, Gtk
-
-if __name__ == "__main__":
-    import gi
-
-    gi.require_version("Gtk", "3.0")
 
 
 class Help:
@@ -25,15 +22,9 @@ class Help:
 
 def main(main_loop=True):
     w = Gtk.Window()
-
-    def destroy(arg=None):
-        Gtk.main_quit()
-
-    w.connect("destroy", destroy)
-    w.show_all()
-
-    if main_loop:
-        Gtk.main()
+    w.show()
+    w.connect("destroy", Gtk.main_quit)
+    Gtk.main()
 
 
 if __name__ == "__main__":
