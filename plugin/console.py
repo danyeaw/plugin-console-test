@@ -1,6 +1,7 @@
 import code
 import pydoc
 import sys
+from rlcompleter import Completer
 
 from gi.repository import Gdk, GLib, Gtk, Pango
 
