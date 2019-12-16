@@ -10,12 +10,7 @@ class Help:
         return "Usage: help(object)"
 
 
-def main(main_loop=True):
-    w = Gtk.Window()
-    w.show()
-    w.connect("destroy", Gtk.main_quit)
-    Gtk.main()
-
-
-if __name__ == "__main__":
-    main()
+w = Gtk.Window()
+w.show()
+w.connect("destroy", Gtk.main_quit)
+Gtk.main()
