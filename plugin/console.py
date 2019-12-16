@@ -3,7 +3,7 @@ import pydoc
 from rlcompleter import Completer
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
+from gi.repository import Gdk, Gtk
 
 
 class Help:
@@ -20,7 +20,7 @@ class Help:
         return str(self)
 
 
-def main():
+def main(main_loop=True):
     w = Gtk.Window()
     w.show()
     w.connect("destroy", Gtk.main_quit)
