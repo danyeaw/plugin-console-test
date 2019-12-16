@@ -12,15 +12,6 @@ if __name__ == "__main__":
     gi.require_version("Gtk", "3.0")
 
 
-banner = (
-    """Gaphor Interactive Python Console
-%s
-Type "help" for more information.
-"""
-    % sys.version
-)
-
-
 class Help:
     def __call__(self, obj=None):
         if obj:
