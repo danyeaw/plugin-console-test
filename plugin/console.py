@@ -29,18 +29,7 @@ def main(main_loop=True):
     def destroy(arg=None):
         Gtk.main_quit()
 
-    def key_event(widget, event):
-        if (
-            event.keyval == Gdk.KEY_d
-            and event.get_state() & Gdk.ModifierType.CONTROL_MASK
-        ):
-            destroy()
-        return False
-
     w.connect("destroy", destroy)
-
-    w.add_events(Gdk.EventMask.KEY_PRESS_MASK)
-    w.connect("key_press_event", key_event)
     w.show_all()
 
     if main_loop:
