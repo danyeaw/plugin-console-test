@@ -5,7 +5,7 @@ description = ""
 authors = ["Dan Yeaw <dan@yeaw.me>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 pygobject = "^3.34.0"
 
 [tool.poetry.dev-dependencies]
