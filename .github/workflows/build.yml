@@ -4,15 +4,16 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        py_ver: [3.7, 3.8]
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Python 3.8
+    - name: Set up Python
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8
+        python-version: ${{ matrix.py_ver }}
     - name: Install Ubuntu dependencies
       run: >
           sudo apt-get update -q && sudo apt-get install
