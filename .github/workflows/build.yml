@@ -9,9 +9,9 @@ jobs:
       matrix:
         py_ver: ["3.7", "3.8", "3.9", "3.10"]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2.4.0
     - name: Set up Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2.3.0
       with:
         python-version: ${{ matrix.py_ver }}
     - name: Install Ubuntu dependencies
