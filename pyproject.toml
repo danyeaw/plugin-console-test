@@ -10,6 +10,7 @@ pygobject = "^3.34.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
+pytest-xvfb = "^2.0.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
