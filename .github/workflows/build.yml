@@ -4,9 +4,10 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [ubuntu-latest, ubuntu-18.04]
         py_ver: ["3.7", "3.8", "3.9", "3.10"]
     steps:
     - uses: actions/checkout@v2.4.0
@@ -27,4 +28,4 @@ jobs:
     # - name: Setup tmate session
     #   uses: mxschmitt/action-tmate@v1
     - name: Test with Pytest
-      run: xvfb-run pytest
+      run: pytest
