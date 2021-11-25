@@ -9,8 +9,6 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-18.04]
         py_ver: ["3.7", "3.8", "3.9", "3.10"]
-    env:
-      DISPLAY: :0
     steps:
     - uses: actions/checkout@v2.4.0
     - name: Set up Python
@@ -21,8 +19,6 @@ jobs:
       run: >
         sudo apt-get update -qq && sudo apt-get install -qq --no-install-recommends
         gir1.2-gtk-3.0 libgirepository1.0-dev
-    - name: Start Xvfb
-      run: sudo /usr/bin/Xvfb $DISPLAY -screen 0 1280x1024x24 &
     - name: Install Poetry
       uses: abatilo/actions-poetry@v2.1.4
     - name: Turn off Virtualenvs
@@ -30,4 +26,4 @@ jobs:
     - name: Install Python Dependencies
       run: poetry install
     - name: Run tests
-      run: pytest
+      run: xvfb-run --auto-servernum pytest
