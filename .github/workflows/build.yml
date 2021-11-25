@@ -9,6 +9,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-18.04]
         py_ver: ["3.7", "3.8", "3.9", "3.10"]
+    env:
+      DISPLAY: ':99.0'
     steps:
     - uses: actions/checkout@v2.4.0
     - name: Set up Python
@@ -19,15 +21,13 @@ jobs:
       run: >
         sudo apt-get update -qq && sudo apt-get install -qq --no-install-recommends
         gir1.2-gtk-3.0 libgirepository1.0-dev
+    - name: Setup xfvb
+      run: /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1920x1200x24 -ac +extension GLX
     - name: Install Poetry
       uses: abatilo/actions-poetry@v2.1.4
     - name: Turn off Virtualenvs
       run: poetry config virtualenvs.create false
     - name: Install Python Dependencies
       run: poetry install
-    # - name: Setup tmate session
-    #   uses: mxschmitt/action-tmate@v1
-    - name: Run headless test
-      uses: GabrielBB/xvfb-action@v1.6
-      with:
-        run: pytest
+    - name: Run headless tests
+      run: xvfb-run pytest
