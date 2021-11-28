@@ -1,4 +1,4 @@
-from rlcompleter import Completer
+import readline
 
 
 def get_four():
